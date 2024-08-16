@@ -4,8 +4,8 @@
   "description": "Aprendiendo SAAS y NPM",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "sass": "sass src/scss:build/css"
+  },  
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/stan-mqz/Festival-de-m-sica.git"
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/stan-mqz/Festival-de-m-sica/issues"
   },
-  "homepage": "https://github.com/stan-mqz/Festival-de-m-sica#readme"
+  "homepage": "https://github.com/stan-mqz/Festival-de-m-sica#readme",
+  "devDependencies": {
+    "sass": "^1.77.8"
+  }
 }
