@@ -1,0 +1,24 @@
+{
+  "name": "festivalmusica",
+  "version": "1.0.0",
+  "description": "Aprendiendo SAAS y NPM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/stan-mqz/Festival-de-m-sica.git"
+  },
+  "keywords": [
+    "SASS",
+    "NPM",
+    "Gulp"
+  ],
+  "author": "Stan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stan-mqz/Festival-de-m-sica/issues"
+  },
+  "homepage": "https://github.com/stan-mqz/Festival-de-m-sica#readme"
+}
