@@ -5,29 +5,41 @@
 .header{
     background-color: v.$verde;
 
-  //Agrega el mq a header y tambien añade este color al archivo mixins dinamicante
-    @include m.telefono {
-      color: wheat;
-    }
+  
 
     .contenido-header{
         padding: 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        
+        @include m.tablet {
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
     }
 
     h1 {
         color: v.$blanco;
-        margin: 0;
+        text-align: center;
+        @include m.tablet {
+            text-align: left;
+            margin: 0;
+        }
     }
 }
 
-//Se crea un nuevo selector en vez de anidarlos debido a que quedaría demasiado grande el selector
+
 .navegacion-pr{
 
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
+    @include m.tablet {
+        flex-direction: row;
+    }
+
 
     a {
         color: v.$blanco;
