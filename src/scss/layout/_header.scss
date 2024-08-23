@@ -1,0 +1,36 @@
+@use "base/variables" as v;
+
+//Contenido anidado
+.header{
+    background-color: v.$verde;
+
+    .contenido-header{
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h1 {
+        color: v.$blanco;
+        margin: 0;
+    }
+}
+
+//Se crea un nuevo selector en vez de anidarlos debido a que quedaría demasiado grande el selector
+.navegacion-pr{
+
+    display: flex;
+    gap: 2rem;
+
+    a {
+        color: v.$blanco;
+
+        &:hover{
+            color: v.$amarillo;
+        }
+    }
+
+
+}
+
