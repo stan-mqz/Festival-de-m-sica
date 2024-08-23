@@ -1,8 +1,14 @@
 @use "base/variables" as v;
+@use "base/mixins" as m;
 
 //Contenido anidado
 .header{
     background-color: v.$verde;
+
+  //Agrega el mq a header y tambien añade este color al archivo mixins dinamicante
+    @include m.telefono {
+      color: wheat;
+    }
 
     .contenido-header{
         padding: 2rem;

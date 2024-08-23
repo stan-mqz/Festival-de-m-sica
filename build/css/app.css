@@ -374,6 +374,11 @@ body > section {
 .header {
   background-color: #4CB8B3;
 }
+@media (min-width: 480px) {
+  .header {
+    color: wheat;
+  }
+}
 .header .contenido-header {
   padding: 2rem;
   display: flex;
