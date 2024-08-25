@@ -5,6 +5,11 @@
 
     //Los elementos hijo podran posicionarse dentro del padre sin salirse
     position: relative;
+    //Le indicas la altura máxima y mínima
+    min-height: 50rem;
+    max-height: 70rem; 
+    //Le indicas que oculte lo que se salga de esas medidas
+    overflow: hidden;
 
     //Todo el overlay estará dentro del padre, posicionado al centro de él
     .overlay{
@@ -16,19 +21,36 @@
         );
 
         inset: 0; //Para hacer que abarque todo el espacio del padre, o sea el div .video
+        display: flex;
+        align-items: center;
     }
 
     video {
-
+       display: block;
+       width: auto;//Hace que la anchura sea automática en dispositivos más pequeños
+       @include m.desktop{ //La anchura toma todo el espacio en pantallas mas grandes
+        width: 100%;
+       }
     }
 }
 
 .contenido-video{
+
+    z-index: 10;
+
     h2 {
-        
+        color: v.$blanco;
+        font-size: 7rem;
+        margin: 0;
     }
 
     p{
-
+        background-color: v.$rosa;
+        display: inline-block;
+        padding: 1rem 2rem;
+        color: v.$blanco;
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin: 0;
     }
 }
