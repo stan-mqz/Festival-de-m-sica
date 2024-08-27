@@ -29,3 +29,12 @@
   
     }
 }
+
+
+//Asi puedes hacer que un elemento con position cubra todo su contenedor
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(v.$negro, $alpha: 0.5);
+}
