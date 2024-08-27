@@ -1,0 +1,12 @@
+@use "../base/variables" as v;
+
+.footer{
+    background-color: v.$rosa;
+    padding: 2rem 0;
+
+    &-parrafo{
+        color: v.$blanco;
+        margin: 0;
+        text-align: center;
+    }
+}

@@ -9,9 +9,9 @@ const sass = gulpSass(dartSass)
 //Funcion que compila el sass
 export function css(done){
 
-    src("src/scss/app.scss") //Encontrar la ruta
+    src("src/scss/app.scss", {sourcemaps: true}) //Encontrar la ruta
         .pipe( sass().on("error", sass.logError) ) //Llama la funcion "sass" para compilar e imprime errores 
-        .pipe(dest("build/css"))//Donde almacenar este archivo
+        .pipe(dest("build/css", {sourcemaps: true}))//Donde almacenar este archivo
 
     done()
 }
