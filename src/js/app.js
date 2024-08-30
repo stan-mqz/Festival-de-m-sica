@@ -1,7 +1,34 @@
 //Nos avisa cuando el HTML está listo
 document.addEventListener('DOMContentLoaded', () => {
+   
+    navegacionFija();
     crearGaleria();
 });
+
+const navegacionFija = () => {
+     const header = document.querySelector('.header');
+     const sobreFestival = document.querySelector('.sobre-festival');
+
+     window.addEventListener('scroll', () => {
+        /*Esto hace puedas detectar las coordenadas de tu scroll,
+        es decir, calculará que tan lejos estás del final del contenedor
+        seleccionado, por lo tanto, si estas arriba de él, seran coordenadas
+        positivas, sino, serán negativas
+        */
+       const coordenadas = sobreFestival.getBoundingClientRect().bottom;
+
+        if (coordenadas < 1) {
+
+            header.classList.add('fixed')
+            
+        } else {
+
+            header.classList.remove('fixed')
+            
+        }
+        
+     })
+}
 
 const crearGaleria = () => {
     
@@ -39,6 +66,13 @@ const mostrarImagen = (i) => {
    modal.onclick = cerrarModal
    modal.appendChild(imagen);
    
+    //Botón cerrar modal
+    const cerrarModalBtn = document.createElement('BUTTON');
+    cerrarModalBtn.textContent = 'X';
+    cerrarModalBtn.classList.add('btn-cerrar');
+    cerrarModalBtn.onclick = cerrarModal;
+    modal.appendChild(cerrarModalBtn);
+
    //Agregar al HTML
    const body = document.querySelector('body');
    body.classList.add('overflow-hidden');
