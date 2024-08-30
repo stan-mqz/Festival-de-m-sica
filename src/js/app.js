@@ -27,14 +27,21 @@ const crearGaleria = () => {
 };
 
 const mostrarImagen = (i) => {
+
+    //Agregar imagen al modal
+    const imagen = document.createElement('IMG')
+    imagen.src = `src/img/gallery/full/${i}.jpg`;
+    imagen.alt = 'Imagen Galeria'
    
     //Generar Ventana Modal
    const modal = document.createElement('DIV');
    modal.classList.add('modal')
    modal.onclick = cerrarModal
+   modal.appendChild(imagen);
    
    //Agregar al HTML
    const body = document.querySelector('body');
+   body.classList.add('overflow-hidden');
    body.appendChild(modal);
 
    
@@ -43,7 +50,15 @@ const mostrarImagen = (i) => {
 const cerrarModal = () => {
 
     const modal = document.querySelector('.modal');
+    modal.classList.add('fade-out');
 
-    modal?.remove();
+    setTimeout(() => {
+
+        const body = document.querySelector('body');
+        body.classList.remove('overflow-hidden');
+        modal?.remove();
+
+    }, 500);
+    
     
 }
