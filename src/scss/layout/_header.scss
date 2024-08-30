@@ -14,7 +14,8 @@
             box-shadow: .1rem .2rem .3rem #333;
         }
     }
-  
+
+
     .contenido-header{
         padding: 2rem;
         
@@ -51,6 +52,10 @@
 
     a {
         color: v.$blanco;
+
+        &.highligth-menu{
+            color: v.$amarillo;
+        }
 
         &:hover{
             color: v.$amarillo;

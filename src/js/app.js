@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
    
     navegacionFija();
+    resaltarNavegacion();
     crearGaleria();
 });
 
@@ -28,6 +29,42 @@ const navegacionFija = () => {
         }
         
      })
+}
+
+const resaltarNavegacion = () => {
+
+    const lineUp = document.querySelector('#lineup');
+    const galeria = document.querySelector('#galeria');
+    const enlaces = document.querySelectorAll('a');
+
+    window.addEventListener('scroll', () => {
+        
+    const coordenadasLineup = lineUp.getBoundingClientRect().bottom;
+    const coordenadasGaleria = galeria.getBoundingClientRect().bottom;
+
+
+        if (coordenadasLineup > 1) {
+
+            enlaces[0].classList.add('highligth-menu');
+            enlaces[1].classList.remove('highligth-menu');
+            
+            
+        } else if (coordenadasGaleria > 1) {
+
+            enlaces[0].classList.remove('highligth-menu');
+            enlaces[1].classList.add('highligth-menu');
+            enlaces[2].classList.remove('highligth-menu');
+            
+            
+        } else {
+            
+            enlaces[1].classList.remove('highligth-menu');
+            enlaces[2].classList.add('highligth-menu');
+            
+        }
+
+    })
+    
 }
 
 const crearGaleria = () => {
