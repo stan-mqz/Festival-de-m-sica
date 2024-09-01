@@ -1,15 +1,24 @@
 //Nos avisa cuando el HTML está listo
 document.addEventListener('DOMContentLoaded', () => {
    
-    navegacionFija();
-    crearGaleria();
+    navegacionFija()
+    crearGaleria()
+    resaltarEnlance()
+
 });
 
+
+
+
+
+
 const navegacionFija = () => {
+
      const header = document.querySelector('.header');
      const sobreFestival = document.querySelector('.sobre-festival');
 
      window.addEventListener('scroll', () => {
+
         /*Esto hace puedas detectar las coordenadas de tu scroll,
         es decir, calculará que tan lejos estás del final del contenedor
         seleccionado, por lo tanto, si estas arriba de él, seran coordenadas
@@ -29,6 +38,57 @@ const navegacionFija = () => {
         
      })
 }
+
+const resaltarEnlance = () => {
+
+        document.addEventListener('scroll', () => {
+
+           
+
+        const sections = document.querySelectorAll('section');
+        const enlaces = document.querySelectorAll('.navegacion-pr a');
+        let actual = '';  
+
+        //Detectar en que sección nos encontramos
+        sections.forEach(section => {
+            
+
+            /*Detecta la distancia entre cada elemento hijo y su padre,
+              en este caso, distancia hacia arriba entre section y body
+            */
+
+            const sectionTop = section.offsetTop;
+
+            //Tomar la altura de un elemento
+            const sectionHigh = section.clientHeight;
+            
+            //Detectar el section a traves de "if"
+            if (window.scrollY >= (sectionTop - sectionHigh / 3) ) {
+                
+                actual = section.id;
+
+            }
+
+        });
+
+
+
+        enlaces.forEach(enlace  => {
+            if(enlace.getAttribute('href') === '#' + actual){
+                enlace.classList.add('active');
+
+            } else {
+                enlace.classList.remove('active');
+            }
+        });
+    })
+
+   
+            
+}
+
+
+
 
 const crearGaleria = () => {
     

@@ -52,7 +52,8 @@
     a {
         color: v.$blanco;
 
-        &:hover{
+        &:hover,
+        &.active{
             color: v.$amarillo;
         }
     }
