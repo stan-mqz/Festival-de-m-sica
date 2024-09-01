@@ -1,9 +1,7 @@
 //Nos avisa cuando el HTML está listo
 document.addEventListener('DOMContentLoaded', () => {
-<<<<<<< HEAD
    
     navegacionFija();
-    resaltarNavegacion();
     crearGaleria();
 });
 
@@ -32,47 +30,6 @@ const navegacionFija = () => {
      })
 }
 
-const resaltarNavegacion = () => {
-
-    const lineUp = document.querySelector('#lineup');
-    const galeria = document.querySelector('#galeria');
-    const enlaces = document.querySelectorAll('a');
-
-    window.addEventListener('scroll', () => {
-        
-    const coordenadasLineup = lineUp.getBoundingClientRect().bottom;
-    const coordenadasGaleria = galeria.getBoundingClientRect().bottom;
-
-
-        if (coordenadasLineup > 1) {
-
-            enlaces[0].classList.add('highligth-menu');
-            enlaces[1].classList.remove('highligth-menu');
-            
-            
-        } else if (coordenadasGaleria > 1) {
-
-            enlaces[0].classList.remove('highligth-menu');
-            enlaces[1].classList.add('highligth-menu');
-            enlaces[2].classList.remove('highligth-menu');
-            
-            
-        } else {
-            
-            enlaces[1].classList.remove('highligth-menu');
-            enlaces[2].classList.add('highligth-menu');
-            
-        }
-
-    })
-    
-}
-
-=======
-    crearGaleria();
-});
-
->>>>>>> parent of 468f4de (fixed header added)
 const crearGaleria = () => {
     
     const CANTIDAD_IMAGENES = 16;
@@ -109,6 +66,13 @@ const mostrarImagen = (i) => {
    modal.onclick = cerrarModal
    modal.appendChild(imagen);
    
+    //Botón cerrar modal
+    const cerrarModalBtn = document.createElement('BUTTON');
+    cerrarModalBtn.textContent = 'X';
+    cerrarModalBtn.classList.add('btn-cerrar');
+    cerrarModalBtn.onclick = cerrarModal;
+    modal.appendChild(cerrarModalBtn);
+
    //Agregar al HTML
    const body = document.querySelector('body');
    body.classList.add('overflow-hidden');

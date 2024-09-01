@@ -5,8 +5,16 @@
 .header{
     background-color: v.$verde;
 
+    @include m.tablet{
+        &.fixed{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            box-shadow: .1rem .2rem .3rem #333;
+        }
+    }
   
-
     .contenido-header{
         padding: 2rem;
         
@@ -44,10 +52,6 @@
     a {
         color: v.$blanco;
 
-        &.highligth-menu{
-            color: v.$amarillo;
-        }
-
         &:hover{
             color: v.$amarillo;
         }
@@ -55,4 +59,3 @@
 
 
 }
-
