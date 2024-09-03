@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     navegacionFija()
     crearGaleria()
     resaltarEnlance()
+    scrollNav()
 
 });
-
 
 
 
@@ -155,4 +155,24 @@ const cerrarModal = () => {
     }, 500);
     
     
+}
+
+const scrollNav = () => {
+    const navLinks = document.querySelectorAll('.navegacion-pr a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click' ,(e) => {
+           
+            e.preventDefault();
+
+            //Obtenemos el elemento html y su atributo 'href'
+            sectionScroll = e.target.getAttribute('href');
+            //Seleccionamos el elemento al cual le dimos click
+            const section = document.querySelector(sectionScroll);
+
+            //De esta manera indicamos que haga scroll hacia el elemento seleccionado
+            section.scrollIntoView({behavior: 'smooth'})
+        
+        })
+    });
 }
