@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/stan-mqz/Festival-de-m-sica#readme",
   "devDependencies": {
+    "glob": "^11.0.0",
     "gulp": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-terser": "^2.1.0",

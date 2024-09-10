@@ -101,7 +101,7 @@ const crearGaleria = () => {
        imagen.width = '300';
        imagen.heigth = '200';
 
-       imagen.src = `src/img/gallery/full/${index}.jpg`;
+       imagen.src = `src/img/gallery/thumb/${index}.jpg`;
        imagen.alt = 'Imagen Galeria'
 
         //Event Handler
