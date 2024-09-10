@@ -96,10 +96,12 @@ const crearGaleria = () => {
     const galeria = document.querySelector('.galeria-imagenes');
 
     for (let index = 1; index <= CANTIDAD_IMAGENES; index++) {
-       const imagen = document.createElement('IMG')
-       imagen.loading = 'lazy';
-       imagen.width = '300';
-       imagen.heigth = '200';
+       const imagen = document.createElement('PICTURE')
+       imagen.innerHTML = `
+       <source srcset="build/img/gallery/thumb/${index}.avif" type="image/avif">
+       <source srcset="build/img/gallery/thumb/${index}.webp" type="image/webp">
+       <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${index}.jpg" alt="imagen galeria">
+   `;
 
        imagen.src = `src/img/gallery/thumb/${index}.jpg`;
        imagen.alt = 'Imagen Galeria'
@@ -120,10 +122,12 @@ const crearGaleria = () => {
 const mostrarImagen = (i) => {
 
     //Agregar imagen al modal
-    const imagen = document.createElement('IMG');
-    imagen.src = `src/img/gallery/full/${i}.jpg`;
-    imagen.alt = 'Imagen Galeria';
-   
+    const imagen = document.createElement('PICTURE');
+    imagen.innerHTML = `
+    <source srcset="build/img/gallery/full/${i}.avif" type="image/avif">
+    <source srcset="build/img/gallery/full/${i}.webp" type="image/webp">
+    <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">
+`;
     //Generar Ventana Modal
    const modal = document.createElement('DIV');
    modal.classList.add('modal')
