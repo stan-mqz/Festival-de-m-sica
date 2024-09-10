@@ -97,6 +97,10 @@ const crearGaleria = () => {
 
     for (let index = 1; index <= CANTIDAD_IMAGENES; index++) {
        const imagen = document.createElement('IMG')
+       imagen.loading = 'lazy';
+       imagen.width = '300';
+       imagen.heigth = '200';
+
        imagen.src = `src/img/gallery/full/${index}.jpg`;
        imagen.alt = 'Imagen Galeria'
 
@@ -116,9 +120,9 @@ const crearGaleria = () => {
 const mostrarImagen = (i) => {
 
     //Agregar imagen al modal
-    const imagen = document.createElement('IMG')
+    const imagen = document.createElement('IMG');
     imagen.src = `src/img/gallery/full/${i}.jpg`;
-    imagen.alt = 'Imagen Galeria'
+    imagen.alt = 'Imagen Galeria';
    
     //Generar Ventana Modal
    const modal = document.createElement('DIV');
