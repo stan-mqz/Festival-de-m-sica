@@ -1,6 +1,6 @@
 # Music Festival Landing Page
 
-[Live Demo](https://stan-mqz.github.io/Festival-de-m-sica/)
+[Live Demo](https://stan-mqz-festival-musica.netlify.app/)
 
 
 A vibrant and interactive landing page for a music festival, built using HTML, CSS, Sass and JavaScript. This project features various sections containing festival information, a gallery created with JavaScript, and a dynamic navigation menu that highlights the current section.
